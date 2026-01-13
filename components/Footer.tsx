@@ -1,19 +1,18 @@
 
 import React from 'react';
+import Logo from './Logo';
 
 const Footer: React.FC = () => {
   return (
     <footer className="bg-black border-t border-white/10 pt-20 pb-10 px-6 lg:px-12 text-white/40">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
         <div className="space-y-6">
-          <div className="flex items-center space-x-2">
-            <div className="w-6 h-6 bg-red-700 rounded-sm flex items-center justify-center transform rotate-45">
-              <span className="text-white font-bold text-xs transform -rotate-45">M</span>
-            </div>
+          <div className="flex items-center space-x-4">
+            <Logo className="w-16 h-16" />
             <span className="font-bold tracking-tighter text-white">MIND OVER MATTER</span>
           </div>
           <p className="text-sm font-light leading-relaxed">
-            Premium health & fitness studio dedicated to the science of human performance.
+            Premium health & fitness studio dedicated to the science of human performance through research based exercise.
           </p>
         </div>
 
@@ -30,7 +29,7 @@ const Footer: React.FC = () => {
           <h4 className="text-white font-bold text-xs tracking-widest uppercase mb-6">Useful Links</h4>
           <ul className="text-sm space-y-3 font-light">
             <li><a href="#" className="hover:text-red-700 transition-colors">Training Philosophy</a></li>
-            <li><a href="#" className="hover:text-red-700 transition-colors">Our Coaches</a></li>
+            <li><a href="#" className="hover:text-red-700 transition-colors">Our Methodology</a></li>
             <li><a href="#" className="hover:text-red-700 transition-colors">Success Stories</a></li>
             <li><a href="#" className="hover:text-red-700 transition-colors">Privacy Policy</a></li>
           </ul>
