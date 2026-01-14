@@ -1,5 +1,5 @@
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import BrandIntro from './components/BrandIntro';
@@ -11,8 +11,11 @@ import OfferCTA from './components/OfferCTA';
 import FAQ from './components/FAQ';
 import FinalCTA from './components/FinalCTA';
 import Footer from './components/Footer';
+import Methods from './components/Methods';
 
 const App: React.FC = () => {
+  const [currentPage, setCurrentPage] = useState<'home' | 'methods'>('home');
+
   useEffect(() => {
     const observerOptions = {
       threshold: 0.1,
@@ -33,9 +36,18 @@ const App: React.FC = () => {
     return () => observer.disconnect();
   }, []);
 
+  if (currentPage === 'methods') {
+    return (
+      <>
+        <Header onNavigate={setCurrentPage} />
+        <Methods />
+      </>
+    );
+  }
+
   return (
     <div className="min-h-screen flex flex-col selection:bg-red-700 selection:text-white overflow-x-hidden">
-      <Header />
+      <Header onNavigate={setCurrentPage} />
       <main>
         <Hero />
         <BrandIntro />
