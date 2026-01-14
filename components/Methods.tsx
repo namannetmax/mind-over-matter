@@ -1,13 +1,33 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import FinalCTA from './FinalCTA';
 import Footer from './Footer';
 
 const Methods: React.FC = () => {
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.1,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal').forEach((el) => {
+      observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="min-h-screen flex flex-col selection:bg-red-700 selection:text-white overflow-x-hidden">
       <div className="pt-20">
-        <section className="relative h-[500px] md:h-[600px] flex items-center justify-center bg-gradient-to-b from-black/40 to-black/80" style={{backgroundImage: 'url("https://images.pexels.com/photos/416717/pexels-photo-416717.jpeg?auto=compress&cs=tinysrgb&w=1600")', backgroundSize: 'cover', backgroundPosition: 'center'}}>
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/80"></div>
+        <section className="relative h-[500px] md:h-[600px] flex items-center justify-center bg-black" style={{backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(https://images.pexels.com/photos/416717/pexels-photo-416717.jpeg?auto=compress&cs=tinysrgb&w=1600)', backgroundSize: 'cover', backgroundPosition: 'center'}}>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/80"></div>
           <div className="relative z-10 text-center px-4">
             <h1 className="text-4xl md:text-6xl font-black tracking-tight mb-4 reveal">Training method</h1>
           </div>
