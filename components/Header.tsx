@@ -26,9 +26,13 @@ const Header: React.FC = () => {
         </div>
         
         <nav className="hidden md:flex space-x-8 text-[11px] font-bold tracking-[0.2em] text-white/70">
-          <a href="#" className="hover:text-red-600 transition-colors uppercase">Philosophy</a>
-          <a href="#" className="hover:text-red-600 transition-colors uppercase">Personalization</a>
-          <a href="#" className="hover:text-red-600 transition-colors uppercase">FAQ</a>
+          <a href="#" className="hover:text-red-600 transition-colors uppercase">Home</a>
+          <a href="#" className="hover:text-red-600 transition-colors uppercase">Methods</a>
+          <a href="#" className="hover:text-red-600 transition-colors uppercase">Benefits</a>
+          <a href="#" className="hover:text-red-600 transition-colors uppercase">Goals</a>
+          <a href="#" className="hover:text-red-600 transition-colors uppercase">Questions</a>
+          <a href="#" className="hover:text-red-600 transition-colors uppercase">Blog</a>
+          <a href="#" className="hover:text-red-600 transition-colors uppercase">Contact</a>
         </nav>
 
         <button className="text-[10px] font-bold tracking-[0.3em] border border-white/20 px-6 py-3 hover:bg-white hover:text-black transition-all uppercase">
